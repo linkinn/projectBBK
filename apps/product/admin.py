@@ -7,13 +7,13 @@ class ProductAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Product Data', {
             "fields": (
-                'name', ('price', 'weight'), 'description', ('color',
-                                                             'reference'), 'measure'
+                'name', ('price', 'purchase_price', 'weight'),
+                'description', ('color', 'reference'), 'measure'
             ),
         }),
     )
 
-    list_display = ('name', 'description', 'price',
+    list_display = ('name', 'description', 'price', 'purchase_price',
                     'weight', 'color', 'reference', 'measure')
     search_fields = ('name', 'price', 'color', 'reference')
     ordering = ('name', 'price', 'weight', 'color')

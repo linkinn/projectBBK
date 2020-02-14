@@ -11,7 +11,7 @@ class ProviderAdmin(admin.ModelAdmin):
             ),
         }),
     )
-
+    raw_id_fields = ('address',)
     list_display = ('name', 'cnpj', 'email', 'phone', 'address')
     search_fields = ('name', 'cnpj', 'email')
     ordering = ('name', 'email')

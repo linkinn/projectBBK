@@ -12,7 +12,7 @@ class Address(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural = 'Addresses'
+        verbose_name_plural = 'Endereço'
 
     def __str__(self):
         return self.cep

@@ -7,6 +7,9 @@ class Stock(models.Model):
     amount = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name_plural = 'Estoque'
+
     def get_total(self):
         total = self.product.price * self.amount
         return total

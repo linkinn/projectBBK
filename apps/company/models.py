@@ -14,5 +14,8 @@ class Company(models.Model):
     logo = models.ImageField(upload_to='company', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name_plural = 'Empresa'
+
     def __str__(self):
         return self.fantasy_name

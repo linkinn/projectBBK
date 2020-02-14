@@ -12,5 +12,8 @@ class Client(models.Model):
     address = models.ForeignKey(Address, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name_plural = 'Clientes'
+
     def __str__(self):
         return self.first_name

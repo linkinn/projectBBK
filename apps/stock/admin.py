@@ -20,8 +20,8 @@ class StockAdmin(admin.ModelAdmin):
 
     def status_invetory(self, obj):
         if obj.amount < 10:
-            return 'low'
-        return 'high'
+            return 'DOWN'
+        return 'UP'
 
     def total_price(self, obj):
         price = f'R$ {obj.get_total()}'

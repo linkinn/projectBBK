@@ -17,6 +17,7 @@ class ClientAdmin(admin.ModelAdmin):
             ),
         })
     )
+    raw_id_fields = ('address',)
     list_display = ('first_name', 'last_name',
                     'birth_date', 'phone', 'cpf', 'address')
     search_fields = ('first_name', 'phone', 'cpf')

@@ -11,5 +11,8 @@ class Provider(models.Model):
         Address, on_delete=models.PROTECT, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name_plural = 'Fornecedores'
+
     def __str__(self):
         return self.name
