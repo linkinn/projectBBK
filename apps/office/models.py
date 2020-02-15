@@ -7,6 +7,7 @@ class Office(models.Model):
 
     class Meta:
         verbose_name_plural = 'Cargos'
+        verbose_name = 'um cargo'
 
     def __str__(self):
         return self.name

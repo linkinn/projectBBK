@@ -16,6 +16,7 @@ class Company(models.Model):
 
     class Meta:
         verbose_name_plural = 'Empresa'
+        verbose_name = 'uma empresa'
 
     def __str__(self):
         return self.fantasy_name

@@ -13,6 +13,7 @@ class Address(models.Model):
 
     class Meta:
         verbose_name_plural = 'Endereço'
+        verbose_name = 'um endereço'
 
     def __str__(self):
         return self.cep

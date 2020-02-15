@@ -13,6 +13,7 @@ class Provider(models.Model):
 
     class Meta:
         verbose_name_plural = 'Fornecedores'
+        verbose_name = 'um fornecedor'
 
     def __str__(self):
         return self.name

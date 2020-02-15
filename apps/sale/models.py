@@ -15,6 +15,7 @@ class Sale(models.Model):
 
     class Meta:
         verbose_name_plural = 'Vendas'
+        verbose_name = 'uma venda'
 
     def __str__(self):
         return self.client.first_name
@@ -31,6 +32,7 @@ class SaleProduct(models.Model):
 
     class Meta:
         verbose_name_plural = 'Produtos Vendidos'
+        verbose_name = 'um produto vendido'
 
     def clean(self):
         stock = Stock.objects.get(product=self.product)

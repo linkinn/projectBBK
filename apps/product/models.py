@@ -9,6 +9,7 @@ class Color(models.Model):
 
     class Meta:
         verbose_name_plural = 'Cores'
+        verbose_name = 'uma cor'
 
     def __str__(self):
         return self.name
@@ -20,6 +21,7 @@ class Reference(models.Model):
 
     class Meta:
         verbose_name_plural = 'Referencias'
+        verbose_name = 'uma referencia'
 
     def __str__(self):
         return self.name
@@ -32,6 +34,7 @@ class Measure(models.Model):
 
     class Meta:
         verbose_name_plural = 'Medidas'
+        verbose_name = 'uma medida'
 
     def __str__(self):
         return self.name
@@ -51,6 +54,7 @@ class Product(models.Model):
 
     class Meta:
         verbose_name_plural = 'Produtos'
+        verbose_name = 'um produto'
 
     def __str__(self):
         return f'{self.name} {self.reference} {self.color}'

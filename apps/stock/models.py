@@ -9,6 +9,7 @@ class Stock(models.Model):
 
     class Meta:
         verbose_name_plural = 'Estoque'
+        verbose_name = 'estoque'
 
     def get_total(self):
         total = self.product.price * self.amount

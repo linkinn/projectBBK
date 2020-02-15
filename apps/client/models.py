@@ -14,6 +14,7 @@ class Client(models.Model):
 
     class Meta:
         verbose_name_plural = 'Clientes'
+        verbose_name = 'um client'
 
     def __str__(self):
         return self.first_name
