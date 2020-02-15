@@ -9,3 +9,4 @@ class PurchasedProductsAdmin(admin.ModelAdmin):
     search_fields = ('purchased_provider__name', 'purchased_provider__note_number')
     ordering = ('purchased_provider__purchase_date', 'price', 'quantity')
     list_filter = ['purchased_provider__purchase_date', 'created_at']
+    actions = None

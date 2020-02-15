@@ -13,13 +13,13 @@ class PurchasedProviderAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Shopping', {
             "fields": (
-                ('name', 'note_number'), 'purchase_date', 'total'
+                ('provider', 'note_number'), 'purchase_date', 'total'
             ),
         }),
     )
-    readonly_fields = ('total',)
-    list_display = ('name', 'note_number', 'purchase_date', 'total')
-    search_fields = ('name', 'note_number')
+    # readonly_fields = ('total',)
+    list_display = ('provider', 'note_number', 'purchase_date', 'total')
+    search_fields = ('provider', 'note_number')
     ordering = ('purchase_date',)
     list_filter = ['purchase_date', 'created_at']
     inlines = [PurchasedProductsInline]

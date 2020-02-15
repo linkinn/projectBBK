@@ -4,7 +4,7 @@ from apps.address.models import Address
 
 class Provider(models.Model):
     name = models.CharField(max_length=200)
-    cnpj = models.CharField(max_length=18, unique=True)
+    cnpj = models.CharField(max_length=18, unique=True, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     phone = models.CharField(max_length=15, blank=True, null=True)
     address = models.ForeignKey(

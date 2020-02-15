@@ -1,5 +1,8 @@
 from django.apps import AppConfig
 
 
-class AmountConfig(AppConfig):
-    name = 'amount'
+class StockConfig(AppConfig):
+    name = 'apps.stock'
+
+    def ready(self):
+        import apps.stock.signals
