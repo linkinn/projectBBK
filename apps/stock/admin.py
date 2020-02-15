@@ -19,9 +19,16 @@ class StockAdmin(admin.ModelAdmin):
     list_filter = ['created_at']
 
     def status_invetory(self, obj):
-        if obj.amount < 10:
-            return 'DOWN'
-        return 'UP'
+        if obj.amount == 0:
+            return 'WARNING'
+        elif obj.amount <= 20:
+            return 'VERY LOW'
+        elif obj.amount <= 40:
+            return 'LOW'
+        elif obj.amount <= 60:
+            return 'GOOD'
+        else:
+            return 'VERY GOOD'
 
     def total_price(self, obj):
         price = f'R$ {obj.get_total()}'

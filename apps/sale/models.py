@@ -1,9 +1,9 @@
 from django.db import models
-from django.dispatch import receiver
-from django.db.models.signals import pre_save, post_save
+from django.core.exceptions import ValidationError
 from apps.client.models import Client
 from apps.product.models import Product
 from apps.paymentMethod.models import PaymentMethod
+from apps.stock.models import Stock
 
 
 class Sale(models.Model):
@@ -32,19 +32,7 @@ class SaleProduct(models.Model):
     class Meta:
         verbose_name_plural = 'Produtos Vendidos'
 
-
-@receiver(pre_save, sender=SaleProduct)
-def before_save_sale_product_total(sender, instance, **kwargs):
-    total = (instance.product.price * instance.quantity) - instance.discount
-    instance.total = total
-
-
-@receiver(post_save, sender=SaleProduct)
-def before_save_sale_total(sender, instance, created, **kwarg):
-    total = 0
-    current_sale = Sale.objects.get(id=instance.sale.id)
-    sales = SaleProduct.objects.filter(sale=current_sale)
-    for sale in sales:
-        total += sale.total
-    current_sale.total = total
-    current_sale.save()
+    def clean(self):
+        stock = Stock.objects.get(product=self.product)
+        if self.quantity > stock.amount:
+            raise ValidationError(f'Estoque atual {self.product} e de {stock.amount}.')
