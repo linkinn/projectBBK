@@ -44,10 +44,10 @@ INSTALLED_APPS = [
     'apps.company',
     'apps.product',
     'apps.provider',
-    'apps.stock.apps.StockConfig',
-    'apps.purchasedProducts',
     'apps.purchaseProvider',
-    'apps.paymentMethod'
+    'apps.paymentMethod',
+    'apps.stock.apps.StockConfig',
+    'apps.sale.apps.SaleConfig',
 ]
 
 MIDDLEWARE = [

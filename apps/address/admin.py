@@ -5,19 +5,19 @@ from .models import Address
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
     fieldsets = (
-        ('Current Address', {
+        ('Endereço Atual', {
             "fields": (
-                'cep', ('district', 'street')
+                'cep', ('district', 'street'), 'complement'
             ),
         }),
-        ('Nationality', {
+        ('Nacionalidade', {
             # 'classes': ('collapse',),
             "fields": (
                 ('country', 'uf', 'city'),
             )
         })
     )
-    list_display = ('country', 'uf', 'city', 'cep', 'district', 'street')
-    ordering = ('country', 'uf', 'city')
+    list_display = ('id', 'country', 'uf', 'city', 'cep', 'district', 'street')
+    ordering = ('id', 'country', 'uf', 'city')
     search_fields = ('country', 'uf', 'city', 'cep')
     list_filter = ('country', 'uf', 'city')

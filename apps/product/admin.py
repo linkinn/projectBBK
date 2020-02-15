@@ -13,10 +13,10 @@ class ProductAdmin(admin.ModelAdmin):
         }),
     )
 
-    list_display = ('name', 'description', 'price', 'purchase_price',
+    list_display = ('id', 'name', 'description', 'price', 'purchase_price',
                     'weight', 'color', 'reference', 'measure')
     search_fields = ('name', 'price', 'color', 'reference')
-    ordering = ('name', 'price', 'weight', 'color')
+    ordering = ('id', 'name', 'price', 'weight', 'color')
     list_filter = ['color__name', 'reference__name']
 
 

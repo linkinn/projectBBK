@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Office(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, unique=True, verbose_name='Cargo')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

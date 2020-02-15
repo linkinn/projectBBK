@@ -12,10 +12,10 @@ class StockAdmin(admin.ModelAdmin):
         }),
     )
 
-    list_display = ('fullname_product', 'amount',
+    list_display = ('id', 'fullname_product', 'amount',
                     'total_price', 'status_invetory')
     search_fields = ('product', 'product__reference', 'product__color')
-    ordering = ('amount',)
+    ordering = ('id', 'amount',)
     list_filter = ['created_at']
 
     def status_invetory(self, obj):

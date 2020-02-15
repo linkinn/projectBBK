@@ -3,13 +3,13 @@ from apps.address.models import Address
 
 
 class Client(models.Model):
-    first_name = models.CharField(max_length=250)
-    last_name = models.CharField(max_length=250, blank=True, null=True)
-    birth_date = models.DateField(blank=True, null=True)
-    phone = models.CharField(max_length=15)
-    rg = models.CharField(max_length=9, unique=True, blank=True, null=True)
-    cpf = models.CharField(max_length=15, unique=True, blank=True, null=True)
-    address = models.ForeignKey(Address, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=250, verbose_name='Primeiro Nome')
+    last_name = models.CharField(max_length=250, blank=True, null=True, verbose_name='Ultimo Nome')
+    birth_date = models.DateField(blank=True, null=True, verbose_name='Data de Nascimento')
+    phone = models.CharField(max_length=15, verbose_name='Telefone')
+    rg = models.CharField(max_length=9, unique=True, blank=True, null=True, verbose_name='RG')
+    cpf = models.CharField(max_length=15, unique=True, blank=True, null=True, verbose_name='CPF')
+    address = models.ForeignKey(Address, on_delete=models.CASCADE, verbose_name='Endereço')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

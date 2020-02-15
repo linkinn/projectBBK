@@ -1,6 +1,15 @@
 from django.contrib import admin
-from apps.purchasedProducts.models import PurchasedProducts
-from .models import PurchasedProvider
+from .models import PurchasedProvider, PurchasedProducts
+
+
+@admin.register(PurchasedProducts)
+class PurchasedProductsAdmin(admin.ModelAdmin):
+    list_display = ('purchased_provider',
+                    'purchase_type', 'quantity', 'price')
+    search_fields = ('purchased_provider__name', 'purchased_provider__note_number')
+    ordering = ('purchased_provider__purchase_date', 'price', 'quantity')
+    list_filter = ['purchased_provider__purchase_date', 'created_at']
+    actions = None
 
 
 class PurchasedProductsInline(admin.TabularInline):
@@ -13,13 +22,19 @@ class PurchasedProviderAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Shopping', {
             "fields": (
-                ('provider', 'note_number'), 'purchase_date', 'total'
+                ('provider', 'note_number'), 'purchase_date',
             ),
         }),
     )
     # readonly_fields = ('total',)
-    list_display = ('provider', 'note_number', 'purchase_date', 'total')
+    list_display = ('id', 'provider', 'note_number', 'purchase_date', 'total_purchased')
     search_fields = ('provider', 'note_number')
-    ordering = ('purchase_date',)
+    ordering = ('id', 'purchase_date',)
     list_filter = ['purchase_date', 'created_at']
     inlines = [PurchasedProductsInline]
+
+    def total_purchased(self, obj):
+        total = f'R$ {obj.total_purchased()}'
+        return total
+
+    total_purchased.short_description = 'total'

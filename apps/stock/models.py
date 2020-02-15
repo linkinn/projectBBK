@@ -3,8 +3,8 @@ from apps.product.models import Product
 
 
 class Stock(models.Model):
-    product = models.OneToOneField(Product, on_delete=models.PROTECT)
-    amount = models.IntegerField()
+    product = models.OneToOneField(Product, on_delete=models.PROTECT, verbose_name='Produto')
+    amount = models.IntegerField(verbose_name='Quantidade')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

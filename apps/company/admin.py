@@ -13,6 +13,6 @@ class CompanyAdmin(admin.ModelAdmin):
         }),
     )
     raw_id_fields = ('address',)
-    list_display = ('fantasy_name', 'social_registration',
+    list_display = ('id', 'fantasy_name', 'social_registration',
                     'cnpj', 'state_registration', 'open_date', 'address')
     search_fields = ('fantasy_name', 'cnpj')

@@ -1,7 +1,7 @@
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from apps.product.models import Product
-from apps.purchasedProducts.models import PurchasedProducts
+from apps.purchaseProvider.models import PurchasedProducts
 from .models import Stock
 
 

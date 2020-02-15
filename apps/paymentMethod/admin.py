@@ -12,7 +12,7 @@ class PaymentMethodAdmin(admin.ModelAdmin):
         }),
     )
 
-    list_display = ('type_payment', 'mode')
+    list_display = ('id', 'type_payment', 'mode')
     search_fields = ('type_payment',)
-    ordering = ('type_payment',)
+    ordering = ('id', 'type_payment',)
     list_filter = ['mode']

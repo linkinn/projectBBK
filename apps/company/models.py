@@ -3,15 +3,15 @@ from apps.address.models import Address
 
 
 class Company(models.Model):
-    fantasy_name = models.CharField(max_length=200, unique=True)
+    fantasy_name = models.CharField(max_length=200, unique=True, verbose_name='Nome Fantasia')
     social_registration = models.CharField(
-        max_length=40, unique=True, null=True, blank=True)
-    cnpj = models.CharField(max_length=18, unique=True)
+        max_length=40, unique=True, null=True, blank=True, verbose_name='Registro Social')
+    cnpj = models.CharField(max_length=18, unique=True, verbose_name='CNPJ')
     state_registration = models.CharField(
-        max_length=20, unique=True, null=True, blank=True)
-    open_date = models.DateField()
-    address = models.ForeignKey(Address, on_delete=models.CASCADE)
-    logo = models.ImageField(upload_to='company', null=True, blank=True)
+        max_length=20, unique=True, null=True, blank=True, verbose_name='Registro Estadual')
+    open_date = models.DateField(verbose_name='Data de Abertura')
+    address = models.ForeignKey(Address, on_delete=models.CASCADE, verbose_name='Endereço')
+    logo = models.ImageField(upload_to='company', null=True, blank=True, verbose_name='Logo da Empresa')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

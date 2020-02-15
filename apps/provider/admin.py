@@ -12,7 +12,7 @@ class ProviderAdmin(admin.ModelAdmin):
         }),
     )
     raw_id_fields = ('address',)
-    list_display = ('name', 'cnpj', 'email', 'phone', 'address')
+    list_display = ('id', 'name', 'cnpj', 'email', 'phone', 'address')
     search_fields = ('name', 'cnpj', 'email')
-    ordering = ('name', 'email')
+    ordering = ('id', 'name', 'email')
     list_filter = ['created_at']

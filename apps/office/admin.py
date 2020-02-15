@@ -4,7 +4,7 @@ from .models import Office
 
 @admin.register(Office)
 class OfficeAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ('id', 'name',)
     search_fields = ('name',)
-    ordering = ('name',)
+    ordering = ('id', 'name',)
     list_filter = ['created_at']

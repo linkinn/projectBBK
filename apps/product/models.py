@@ -4,7 +4,7 @@ from django.dispatch import receiver
 
 
 class Color(models.Model):
-    name = models.CharField(max_length=30, unique=True)
+    name = models.CharField(max_length=30, unique=True, verbose_name='Cor')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -15,7 +15,7 @@ class Color(models.Model):
 
 
 class Reference(models.Model):
-    name = models.CharField(max_length=120, unique=True)
+    name = models.CharField(max_length=120, unique=True, verbose_name='Referencia')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -26,8 +26,8 @@ class Reference(models.Model):
 
 
 class Measure(models.Model):
-    name = models.CharField(max_length=10)
-    value = models.CharField(max_length=30)
+    name = models.CharField(max_length=10, verbose_name='Tipo')
+    value = models.CharField(max_length=30, verbose_name='Valor')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -38,15 +38,15 @@ class Measure(models.Model):
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=120, unique=True)
-    description = models.TextField(blank=True, null=True)
-    price = models.DecimalField(max_digits=9, decimal_places=2)
+    name = models.CharField(max_length=120, unique=True, verbose_name='Nome')
+    description = models.TextField(blank=True, null=True, verbose_name='Descrição')
+    price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Preço')
     purchase_price = models.DecimalField(max_digits=9, decimal_places=2,
-                                         blank=True, null=True)
-    weight = models.DecimalField(max_digits=9, decimal_places=2)
-    color = models.ForeignKey(Color, on_delete=models.PROTECT)
-    reference = models.ForeignKey(Reference, on_delete=models.PROTECT)
-    measure = models.ForeignKey(Measure, on_delete=models.PROTECT)
+                                         blank=True, null=True, verbose_name='Preço de Compra')
+    weight = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Peso')
+    color = models.ForeignKey(Color, on_delete=models.PROTECT, verbose_name='Cor')
+    reference = models.ForeignKey(Reference, on_delete=models.PROTECT, verbose_name='Referencia')
+    measure = models.ForeignKey(Measure, on_delete=models.PROTECT, verbose_name='Medida')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
