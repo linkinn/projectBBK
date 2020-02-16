@@ -17,6 +17,10 @@ class SaleProductAdmin(admin.ModelAdmin):
     ordering = ('id', 'quantity', 'total', 'status')
     list_filter = ['status', 'created_at']
 
+    def save_model(self, request, instance, form, change):
+        user = request.user
+        print(user)
+
     def total_payable(self, obj):
         total = f'R$ {obj.total}'
         return total

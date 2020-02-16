@@ -10,6 +10,8 @@ autopep8 = "*"
 [packages]
 django = "*"
 pillow = "*"
+psycopg2 = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.8"
