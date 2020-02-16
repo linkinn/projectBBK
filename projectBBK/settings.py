@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.core',
     'apps.address',
     'apps.client',
     'apps.office',
@@ -46,9 +45,11 @@ INSTALLED_APPS = [
     'apps.provider',
     'apps.purchaseProvider',
     'apps.paymentMethod',
+    'apps.core.apps.CoreConfig',
     'apps.stock.apps.StockConfig',
     'apps.sale.apps.SaleConfig',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,3 +134,32 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = 'files'
 
 MEDIA_URL = '/files/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'WARNING',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/debug.log',
+        },
+        'file_login': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/login.log',
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'WARNING',
+            'propagate': True,
+        },
+        'login': {
+            'handlers': ['file_login'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}

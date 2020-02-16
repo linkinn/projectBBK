@@ -4,6 +4,11 @@ from apps.client.models import Client
 from apps.product.models import Product
 from apps.paymentMethod.models import PaymentMethod
 from apps.stock.models import Stock
+import time
+import logging
+
+
+logger = logging.getLogger('django')
 
 
 class Sale(models.Model):
@@ -37,4 +42,5 @@ class SaleProduct(models.Model):
     def clean(self):
         stock = Stock.objects.get(product=self.product)
         if self.quantity > stock.amount:
+            # logger.error(f'{time.strftime("%Y-%m-%d %H:%M:%S")} {request.user} Something went wrong!')
             raise ValidationError(f'Estoque atual {self.product} e de {stock.amount}.')

@@ -1,0 +1,10 @@
+login user: admin via ip: 127.0.0.1
+2020-02-16 00:30:23 - Login User: admin - 127.0.0.1
+2020-02-16 00:34:14 - Logout user: admin - IP 127.0.0.1
+2020-02-16 00:34:25 - Login failed for: {'username': 'sandy', 'password': '********************'}
+2020-02-16 00:40:26 - Login failed for: {'username': 'sandy', 'password': '********************'}
+2020-02-16 00:43:39 - Login failed for: {'username': 'sandy', 'password': '********************'}
+2020-02-16 00:45:28 - Login failed for: {'username': 'sandy', 'password': '********************'}
+2020-02-16 00:46:07 - Login failed for: sandy
+2020-02-16 01:00:48 - Login failed for: sandy
+2020-02-16 01:01:05 - Login User: admin - IP: 127.0.0.1

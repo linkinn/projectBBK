@@ -1,0 +1,312 @@
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\admin\sites.py", line 407, in login
+    return LoginView.as_view(**defaults)(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\edit.py", line 141, in post
+    if form.is_valid():
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 180, in is_valid
+    return self.is_bound and not self.errors
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 175, in errors
+    self.full_clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 377, in full_clean
+    self._clean_form()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 404, in _clean_form
+    cleaned_data = self.clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\forms.py", line 214, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\__init__.py", line 83, in authenticate
+    user_login_failed.send(sender=__name__, credentials=_clean_credentials(credentials), request=request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 173, in send
+    return [
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 174, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "C:\Users\Fillipi\Documents\python\projectBBK\apps\core\signals.py", line 23, in user_login_failed_callback
+    ip = request.META.get('REMOTE_ADDR')
+NameError: name 'request' is not defined
+"POST /admin/login/?next=/admin/ HTTP/1.1" 500 161821
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\admin\sites.py", line 407, in login
+    return LoginView.as_view(**defaults)(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\edit.py", line 141, in post
+    if form.is_valid():
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 180, in is_valid
+    return self.is_bound and not self.errors
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 175, in errors
+    self.full_clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 377, in full_clean
+    self._clean_form()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 404, in _clean_form
+    cleaned_data = self.clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\forms.py", line 214, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\__init__.py", line 83, in authenticate
+    user_login_failed.send(sender=__name__, credentials=_clean_credentials(credentials), request=request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 173, in send
+    return [
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 174, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "C:\Users\Fillipi\Documents\python\projectBBK\apps\core\signals.py", line 23, in user_login_failed_callback
+    logger.warning(f'{time.strftime("%Y-%m-%d %H:%M:%S")} - Login failed for: {credentials.username}')
+AttributeError: 'dict' object has no attribute 'username'
+"POST /admin/login/?next=/admin/ HTTP/1.1" 500 161705
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\admin\sites.py", line 407, in login
+    return LoginView.as_view(**defaults)(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\edit.py", line 141, in post
+    if form.is_valid():
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 180, in is_valid
+    return self.is_bound and not self.errors
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 175, in errors
+    self.full_clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 377, in full_clean
+    self._clean_form()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 404, in _clean_form
+    cleaned_data = self.clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\forms.py", line 214, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\__init__.py", line 83, in authenticate
+    user_login_failed.send(sender=__name__, credentials=_clean_credentials(credentials), request=request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 173, in send
+    return [
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 174, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "C:\Users\Fillipi\Documents\python\projectBBK\apps\core\signals.py", line 23, in user_login_failed_callback
+    logger.warning(f'{time.strftime("%Y-%m-%d %H:%M:%S")} - Login failed for: {credentials.username}')
+AttributeError: 'dict' object has no attribute 'username'
+"POST /admin/login/?next=/admin/ HTTP/1.1" 500 161705
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\admin\sites.py", line 407, in login
+    return LoginView.as_view(**defaults)(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\edit.py", line 141, in post
+    if form.is_valid():
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 180, in is_valid
+    return self.is_bound and not self.errors
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 175, in errors
+    self.full_clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 377, in full_clean
+    self._clean_form()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 404, in _clean_form
+    cleaned_data = self.clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\forms.py", line 214, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\__init__.py", line 83, in authenticate
+    user_login_failed.send(sender=__name__, credentials=_clean_credentials(credentials), request=request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 173, in send
+    return [
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 174, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "C:\Users\Fillipi\Documents\python\projectBBK\apps\core\signals.py", line 23, in user_login_failed_callback
+    logger.warning(f'{time.strftime("%Y-%m-%d %H:%M:%S")} - Login failed for: {credentials[0]}')
+KeyError: 0
+"POST /admin/login/?next=/admin/ HTTP/1.1" 500 161405
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\admin\sites.py", line 407, in login
+    return LoginView.as_view(**defaults)(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\edit.py", line 141, in post
+    if form.is_valid():
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 180, in is_valid
+    return self.is_bound and not self.errors
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 175, in errors
+    self.full_clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 377, in full_clean
+    self._clean_form()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 404, in _clean_form
+    cleaned_data = self.clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\forms.py", line 214, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\__init__.py", line 83, in authenticate
+    user_login_failed.send(sender=__name__, credentials=_clean_credentials(credentials), request=request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 173, in send
+    return [
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 174, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "C:\Users\Fillipi\Documents\python\projectBBK\apps\core\signals.py", line 23, in user_login_failed_callback
+    print(credentials.username)
+AttributeError: 'dict' object has no attribute 'username'
+"POST /admin/login/?next=/admin/ HTTP/1.1" 500 161882
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\admin\sites.py", line 407, in login
+    return LoginView.as_view(**defaults)(request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\views\generic\edit.py", line 141, in post
+    if form.is_valid():
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 180, in is_valid
+    return self.is_bound and not self.errors
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 175, in errors
+    self.full_clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 377, in full_clean
+    self._clean_form()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\forms\forms.py", line 404, in _clean_form
+    cleaned_data = self.clean()
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\forms.py", line 214, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\contrib\auth\__init__.py", line 83, in authenticate
+    user_login_failed.send(sender=__name__, credentials=_clean_credentials(credentials), request=request)
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 173, in send
+    return [
+  File "C:\Users\Fillipi\Documents\python\projectBBK\.venv\lib\site-packages\django\dispatch\dispatcher.py", line 174, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "C:\Users\Fillipi\Documents\python\projectBBK\apps\core\signals.py", line 23, in user_login_failed_callback
+    print(credentials[1])
+KeyError: 1
+"POST /admin/login/?next=/admin/ HTTP/1.1" 500 161582
