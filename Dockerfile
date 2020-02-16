@@ -1,5 +1,17 @@
 FROM ubuntu:18.04
 
+ENV DEBUG=False
+ENV SECRET_KEY=sqw5%^e4lc$dkor-@&5@(csveaw@sdq^mq-nu_u_qy@zel@=u1
+ENV LANGUAGE_CODE=pt-br
+ENV TIME_ZONE=UTC
+
+ENV DB_ENGINE=django.db.backends.postgresql_psycopg2
+ENV DB_NAME=projectbbk
+ENV DB_USER=docker
+ENV DB_PASSWORD=docker
+ENV DB_HOST=127.0.0.1
+ENV DB_PORT=5432
+
 RUN apt update && apt upgrade \
     apt install software-properties-common \
     add-apt-repository ppa:deadsnakes/ppa \
