@@ -12,6 +12,7 @@ django = "*"
 pillow = "*"
 psycopg2 = "*"
 python-decouple = "*"
+wheel = "*"
 
 [requires]
 python_version = "3.8"
