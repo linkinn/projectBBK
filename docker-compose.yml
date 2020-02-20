@@ -7,6 +7,9 @@ services:
     restart: always
     ports:
       - '8080:8080'
+    volumes:
+      - logs:/projectbbk/logs
+      - staticfiles:/projectbbk/staticfiles
 
   nginx:
     build: ./nginx
@@ -14,3 +17,9 @@ services:
     restart: always
     ports:
       - '80:80'
+    volumes:
+      - staticfiles:/projectbbk/staticfiles
+
+volumes:
+  staticfiles:
+  logs:
