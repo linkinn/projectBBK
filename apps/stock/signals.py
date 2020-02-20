@@ -21,8 +21,12 @@ def create_stock_purchases(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=SaleProduct)
 def down_stock_sale_products(sender, instance, created, **kwargs):
-    stock = Stock.objects.get(product=instance.product)
-    stock.amount -= instance.quantity
-    if (stock.amount < 0):
-        return
+    if (instance.status):
+        stock = Stock.objects.get(product=instance.product)
+        stock.amount -= instance.quantity
+        if (stock.amount < 0):
+            return
+    else:
+        stock = Stock.objects.get(product=instance.product)
+        stock.amount += instance.quantity
     stock.save()

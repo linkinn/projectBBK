@@ -4,11 +4,11 @@ from apps.address.models import Address
 
 class Company(models.Model):
     fantasy_name = models.CharField(max_length=200, unique=True, verbose_name='Nome Fantasia')
-    social_registration = models.CharField(
-        max_length=40, unique=True, null=True, blank=True, verbose_name='Registro Social')
+    social_reason = models.CharField(
+        max_length=250, unique=True, null=True, blank=True, verbose_name='Razão Social')
     cnpj = models.CharField(max_length=18, unique=True, verbose_name='CNPJ')
     state_registration = models.CharField(
-        max_length=20, unique=True, null=True, blank=True, verbose_name='Registro Estadual')
+        max_length=20, unique=True, null=True, blank=True, verbose_name='Inscrição Estadual')
     open_date = models.DateField(verbose_name='Data de Abertura')
     address = models.ForeignKey(Address, on_delete=models.CASCADE, verbose_name='Endereço')
     logo = models.ImageField(upload_to='company', null=True, blank=True, verbose_name='Logo da Empresa')

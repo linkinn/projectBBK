@@ -14,6 +14,7 @@ logger = logging.getLogger('django')
 class Sale(models.Model):
     client = models.ForeignKey(Client, on_delete=models.PROTECT, verbose_name='Cliente')
     payment_method = models.ForeignKey(PaymentMethod, on_delete=models.PROTECT, verbose_name='Metodo de Pagamento')
+    sale_date = models.DateField(verbose_name='Data da Venda')
     total = models.DecimalField(max_digits=9, decimal_places=2, default=0, verbose_name='Total da Venda')
     status = models.BooleanField(default=True, verbose_name='Status')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -39,7 +40,12 @@ class SaleProduct(models.Model):
         verbose_name_plural = 'Produtos Vendidos'
         verbose_name = 'um produto vendido'
 
+    def __str__(self):
+        return f'Venda {self.sale}.'
+
     def clean(self):
+        if self.status is False:
+            return
         stock = Stock.objects.get(product=self.product)
         if self.quantity > stock.amount:
             # logger.error(f'{time.strftime("%Y-%m-%d %H:%M:%S")} {request.user} Something went wrong!')

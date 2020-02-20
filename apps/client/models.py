@@ -9,7 +9,7 @@ class Client(models.Model):
     phone = models.CharField(max_length=15, verbose_name='Telefone')
     rg = models.CharField(max_length=9, unique=True, blank=True, null=True, verbose_name='RG')
     cpf = models.CharField(max_length=15, unique=True, blank=True, null=True, verbose_name='CPF')
-    address = models.ForeignKey(Address, on_delete=models.CASCADE, verbose_name='Endereço')
+    address = models.ForeignKey(Address, on_delete=models.CASCADE, verbose_name='Endereço', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -8,8 +8,6 @@ from .models import SaleProduct, Sale
 @receiver(pre_save, sender=SaleProduct)
 def before_save_sale_product_total(sender, instance, **kwargs):
     stock = Stock.objects.get(product=instance.product)
-    if (stock.amount < instance.quantity):
-        raise ValidationError(f'Quantidade de {instance.product} nao tem no estoque.')
     total = (instance.product.price * instance.quantity) - instance.discount
     instance.total = total
 

@@ -7,7 +7,7 @@ class AddressAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Endereço Atual', {
             "fields": (
-                'cep', ('district', 'street'), 'complement'
+                'cep', ('district', 'street', 'number'), 'complement'
             ),
         }),
         ('Nacionalidade', {
@@ -17,7 +17,7 @@ class AddressAdmin(admin.ModelAdmin):
             )
         })
     )
-    list_display = ('id', 'country', 'uf', 'city', 'cep', 'district', 'street')
+    list_display = ('id', 'country', 'uf', 'city', 'cep', 'district', 'street', 'number')
     ordering = ('id', 'country', 'uf', 'city')
     search_fields = ('country', 'uf', 'city', 'cep')
     list_filter = ('country', 'uf', 'city')
