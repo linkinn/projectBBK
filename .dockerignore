@@ -1,8 +1,0 @@
-.venv/
-.vscode/
-.gitignore
-files/
-nginx/
-staticfiles/
-__pycache__/
-nginx

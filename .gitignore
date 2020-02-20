@@ -1,5 +1,6 @@
 .venv
 .vscode
+.env
 __pycache__
 logs/*.log
 db.sqlite3
