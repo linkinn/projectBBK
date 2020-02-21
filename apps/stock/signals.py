@@ -1,5 +1,6 @@
 from django.dispatch import receiver
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
+from django.core.exceptions import ValidationError
 from apps.product.models import Product
 from apps.purchaseProvider.models import PurchasedProducts
 from apps.sale.models import SaleProduct
@@ -19,14 +20,34 @@ def create_stock_purchases(sender, instance, created, **kwargs):
     stock.save()
 
 
+@receiver(pre_save, sender=SaleProduct)
+def stock_sale_products_quantity(sender, instance, **kwargs):
+    stock = Stock.objects.get(product=instance.product)
+    sale_product = SaleProduct.objects.get(pk=instance.id)
+
+    if instance.status != sale_product.status and instance.status == False:
+        stock.amount += sale_product.quantity
+        stock.save()
+        return
+    elif instance.status != sale_product.status and instance.status:
+        stock.amount -= instance.quantity
+        stock.save()
+        return
+
+    if sale_product.quantity > instance.quantity:
+        value = sale_product.quantity - instance.quantity
+        stock.amount += value
+        stock.save()
+        return
+    else:
+        value = instance.quantity - sale_product.quantity
+        stock.amount -= value
+        stock.save()
+
+
 @receiver(post_save, sender=SaleProduct)
 def down_stock_sale_products(sender, instance, created, **kwargs):
-    if (instance.status):
-        stock = Stock.objects.get(product=instance.product)
+    stock = Stock.objects.get(product=instance.product)
+    if created:
         stock.amount -= instance.quantity
-        if (stock.amount < 0):
-            return
-    else:
-        stock = Stock.objects.get(product=instance.product)
-        stock.amount += instance.quantity
-    stock.save()
+        stock.save()

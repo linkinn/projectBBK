@@ -48,5 +48,5 @@ class SaleProduct(models.Model):
             return
         stock = Stock.objects.get(product=self.product)
         if self.quantity > stock.amount:
-            # logger.error(f'{time.strftime("%Y-%m-%d %H:%M:%S")} {request.user} Something went wrong!')
+            logger.error(f'Tentativa de vender uma quantidade de prosuto que nao tem no stock!')
             raise ValidationError(f'Estoque atual {self.product} e de {stock.amount}.')
