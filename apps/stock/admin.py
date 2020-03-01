@@ -14,7 +14,7 @@ class StockAdmin(admin.ModelAdmin):
 
     list_display = ('id', 'fullname_product', 'amount',
                     'total_price', 'status_invetory')
-    search_fields = ('product', 'product__reference', 'product__color')
+    search_fields = ('product__name', 'product__reference__name', 'product__color__name')
     ordering = ('id', 'amount',)
     list_filter = ['created_at']
 
