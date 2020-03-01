@@ -37,11 +37,11 @@ class Measure(models.Model):
         verbose_name = 'uma medida'
 
     def __str__(self):
-        return self.name
+        return f'{self.value} {self.name}'
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=120, unique=True, verbose_name='Nome')
+    name = models.CharField(max_length=120, verbose_name='Nome')
     description = models.TextField(blank=True, null=True, verbose_name='Descrição')
     price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Preço')
     purchase_price = models.DecimalField(max_digits=9, decimal_places=2,
