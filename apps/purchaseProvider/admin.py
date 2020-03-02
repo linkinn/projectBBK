@@ -4,12 +4,18 @@ from .models import PurchasedProvider, PurchasedProducts
 
 @admin.register(PurchasedProducts)
 class PurchasedProductsAdmin(admin.ModelAdmin):
-    list_display = ('purchased_provider',
-                    'purchase_type', 'quantity', 'price')
-    search_fields = ('purchased_provider__name', 'purchased_provider__note_number')
+    list_display = ('id', 'purchased_provider', 'number_purchased',
+                    'purchase_type', 'product', 'quantity', 'price')
+    search_fields = ('purchased_provider__provider__name', 'product__name', 'purchased_provider__note_number')
     ordering = ('purchased_provider__purchase_date', 'price', 'quantity')
     list_filter = ['purchased_provider__purchase_date', 'created_at']
     actions = None
+
+    def number_purchased(self, obj):
+        number = f'N° {obj.purchased_provider.id}'
+        return number
+
+    number_purchased.short_description = 'Numero da compra'
 
 
 class PurchasedProductsInline(admin.TabularInline):
