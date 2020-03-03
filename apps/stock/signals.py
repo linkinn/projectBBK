@@ -23,7 +23,12 @@ def create_stock_purchases(sender, instance, created, **kwargs):
 @receiver(pre_save, sender=SaleProduct)
 def stock_sale_products_quantity(sender, instance, **kwargs):
     stock = Stock.objects.get(product=instance.product)
-    sale_product = SaleProduct.objects.get(pk=instance.id)
+    sale_product = None
+
+    if instance.id:
+        sale_product = SaleProduct.objects.get(pk=instance.id)
+    else:
+        sale_product = instance
 
     if instance.status != sale_product.status and instance.status == False:
         stock.amount += sale_product.quantity
